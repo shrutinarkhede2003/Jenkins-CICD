@@ -21,18 +21,17 @@ pipeline {
             }
         }
 
-        stage('Docker Build') {
-            steps {
-                bat 'docker build -t jenkins-cicd-app .'
-            }
-        }
-
+       stage('Docker Build') {
+    steps {
+        bat '"C:\\Users\\Shruti Narkhede\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe" build -t jenkins-cicd-app .'
+    }
+}
         stage('Deploy') {
-            steps {
-                bat 'docker stop jenkins-cicd-container || exit /b 0'
-                bat 'docker rm jenkins-cicd-container || exit /b 0'
-                bat 'docker run -d -p 3000:3000 --name jenkins-cicd-container jenkins-cicd-app'
-            }
-        }
+    steps {
+        bat '"C:\\Users\\Shruti Narkhede\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe" stop jenkins-cicd-container || exit /b 0'
+        bat '"C:\\Users\\Shruti Narkhede\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe" rm jenkins-cicd-container || exit /b 0'
+        bat '"C:\\Users\\Shruti Narkhede\\AppData\\Local\\Programs\\DockerDesktop\\resources\\bin\\docker.exe" run -d -p 3000:3000 --name jenkins-cicd-container jenkins-cicd-app'
+    }
+}
     }
 }
