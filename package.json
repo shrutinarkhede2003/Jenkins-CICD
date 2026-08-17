@@ -1,15 +1,22 @@
 {
   "name": "jenkins-cicd",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "Production-ready Express app with Jenkins CI/CD pipeline and Docker containerization",
+  "main": "app.js",
   "scripts": {
-  "start": "node app.js",
-  "test": "node --test"
-},
-  "keywords": [],
+    "start": "node app.js",
+    "test": "node --test",
+    "lint": "node --check app.js app.test.js"
+  },
+  "keywords": [
+    "jenkins",
+    "cicd",
+    "docker",
+    "express",
+    "nodejs"
+  ],
   "author": "",
   "license": "ISC",
-  "description": "",
   "dependencies": {
     "express": "^5.2.1"
   }
